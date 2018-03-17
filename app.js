@@ -2,8 +2,10 @@ var express = require('express');
 var app =express();
 
 //Routes Will Go Here
-app.get('/', function(req, res){
-res.send("Post Test 1");
+app.get('/', function(req, res) {
+  var name = req.param('name');;  
+
+  res.send('Hello '+name);
 });
 
 app.listen(3000);
