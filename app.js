@@ -1,9 +1,10 @@
 var express = require('express');
 var app =express();
-var port = precess.env.PORT || 8080;
 
 //Routes Will Go Here
+app.get('/', function(req, res){
+res.send("Post Test 1");
+});
 
-
-app.listen(port);
+app.listen(3000);
 console.log('Server Started');
