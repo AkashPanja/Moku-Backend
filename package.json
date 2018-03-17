@@ -1,7 +1,7 @@
 {
   "name": "Moku",
   "version": "1.0.0",
-  "description": "Moku API2",
+  "description": "Moku API",
   "main": "index.js",
   "scripts": {
     "start": "node app.js"
