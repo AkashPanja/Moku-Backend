@@ -1,13 +1,16 @@
-//Import the necessary libraries/declare the necessary objects
-var express = require("express");
-var myParser = require("body-parser");
-var app = express();
+var express        =         require("express");
+var bodyParser     =         require("body-parser");
+var app            =         express();
 
-app.use(myParser.urlencoded({extended : true}));
-app.post("/yourpath", function(request, response) {
-console.log(request.body); //This prints the JSON document received (if it is a JSON document)
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post('/',function(req,res){
+  var user_name=req.body.name;
+  console.log("User name = "+user_name+", password is "+password);
+  res.end("yes");
 });
- 
-//Start the server and make it listen for connections on port 8080
 
-app.listen(8080);
+app.listen(3000,function(){
+console.log("Started on PORT 3000");
+})
