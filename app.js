@@ -1,12 +1,13 @@
-var express = require('express');
-var app =express();
+//Import the necessary libraries/declare the necessary objects
+var express = require("express");
+var myParser = require("body-parser");
+var app = express();
 
-//Routes Will Go Here
-app.get('/', function(req, res) {
-  var name = req.param('name');;  
-
-  res.send('Hello '+name);
+app.use(myParser.urlencoded({extended : true}));
+app.post("/yourpath", function(request, response) {
+console.log(request.body); //This prints the JSON document received (if it is a JSON document)
 });
+ 
+//Start the server and make it listen for connections on port 8080
 
-app.listen(3000);
-console.log('Server Started');
+app.listen(8080);
