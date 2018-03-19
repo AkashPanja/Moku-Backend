@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 app.post('/',function(req,res){
   var user_name=req.body.name;
-  console.log("User name = "+user_name+", password is "+password);
+  console.log("User name = "+req.body+");
   res.end("yes");
 });
 
