@@ -1,13 +1,6 @@
-var express = require("express");
-var router = express.Router();
+var express = require('Express');
 var app = express();
-
-module.exports = router;
-
-router.post("/",function(req,res){
-  res.send(req.body.name.toString());
-});
-
-router.get("/",function(req,res){
-  res.send("Get Request Received");
-});
+var things = require('./things.js');
+//both index.js and things.js should be in same directory
+app.use('/things', things);
+app.listen(3000);
