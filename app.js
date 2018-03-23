@@ -1,16 +1,13 @@
-var express        =         require("express");
-var bodyParser     =         require("body-parser");
-var app            =         express();
+var express = require("express");
+var router = express.Router();
+var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+module.exports = router;
 
-app.post('/',function(req,res){
-  var user_name=req.body.name;
-  console.log("User name = "+req.body+");
-  res.end("yes");
+router.post("/",function(req,res){
+  res.send(req.body.name.toString());
 });
 
-app.listen(3000,function(){
-console.log("Started on PORT 3000");
-})
+router.get("/",function(req,res){
+  res.send("Get Request Received");
+});
