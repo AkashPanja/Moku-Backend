@@ -1,6 +1,21 @@
-var express = require('Express');
+var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
-var things = require('./things.js');
-//both index.js and things.js should be in same directory
-app.use('/things', things);
+
+const basicAuth = require('express-basic-auth');
+ 
+app.use(basicAuth({
+    users: { 'blaze': 'Node2021' }
+}));
+
+app.use(bodyParser.json()); // add a middleware (so that express can parse request.body's json)
+
+app.get('/', function(req, res){
+res.send("Hello World!");
+});
+
+app.post('/', (request, response) => {
+  response.json(request.body);
+});
+
 app.listen(3000);
