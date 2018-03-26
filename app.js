@@ -32,7 +32,7 @@ app.post('/',function(req,res){
 });
 
 app.post('/ALBUM',function(req,res){
- res.end(req.body.OFFSET);
+ res.json(req.body);
 });
 
 //Port
