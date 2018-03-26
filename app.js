@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 
 app.post('/', (request, response) => {
 
-   response.send("here!");
+   response.json(request.body);
 
 con.connect(function(err) {
   if (err) throw err;
