@@ -25,6 +25,12 @@ app.get('/',function(req,res){
    res.send("Hello World");
 });
 
+
+
+app.post('/',function(req,res){
+   res.json(reg.body);
+});
+
 app.post('/ALBUM',function(req,res){
    var json=JSON
    conn.connect(function(err){
