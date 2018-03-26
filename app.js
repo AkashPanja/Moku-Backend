@@ -27,6 +27,7 @@ app.post('/', (request, response) => {
 con.connect(function(err) {
   if (err) throw err;
   response.send("Connected!");
+   respone.json(request.body);
 });
  
 });
