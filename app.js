@@ -1,5 +1,12 @@
 var express = require('express');
+var mysql = require('mysql');
 var bodyParser = require('body-parser');
+var con = mysql.createConnection({
+   host: "localhost",
+   user: "blaze",
+   password: "Node2021"
+ });
+
 var app = express();
 
 const basicAuth = require('express-basic-auth');
@@ -15,19 +22,13 @@ app.get('/', function(req, res){
 });
 
 app.post('/', (request, response) => {
-  response.json(request.body);
- var mysql = require('mysql');
+ 
 
- var con = mysql.createConnection({
-   host: "localhost",
-   user: "blaze",
-   password: "Node2021"
- });
-
- con.connect(function(err) {
+  con.connect(function(err) {
    if (err) throw err;
-   console.log("Connected!");
+    response.json(request.body);
  });
+ 
 });
 
 app.listen(3000);
