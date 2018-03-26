@@ -30,7 +30,7 @@ app.post('/', (request, response) => {
   var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))";
   con.query(sql, function (err, result) {
     if (err) throw err;
-    response.send("Table created");
+    response.end("Table created");
   });
  
 });
