@@ -1,6 +1,17 @@
+//Require
 var express=require('express');
 var mysql=require('mysql');
+var bodyParser=require('body-parser');
+const basicAuth=require('express-basic-auth');
 
+//Middlewares
+app.use(basicAuth({
+   users:{'blaze':Node2021}
+}));
+
+app.use(bodyParser.json());
+
+//Objects
 var app=express();
 var conn=mysql.createConnection({
    host:"localhost",
@@ -9,6 +20,7 @@ var conn=mysql.createConnection({
    database:"moku"
 });
 
+//Methods
 app.get('/',function(req,res){
    conn.connect(function(err){
    if(err) throw err;
@@ -20,4 +32,9 @@ app.get('/',function(req,res){
    });
 });
 
+app.post('/'function(req,res){
+   res.json(req.body);
+});
+
+//Port
 app.listen(3000);
