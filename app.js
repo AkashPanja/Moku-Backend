@@ -4,7 +4,8 @@ var bodyParser = require('body-parser');
 var con = mysql.createConnection({
    host: "localhost",
    user: "blaze",
-   password: "Node2021"
+   password: "Node2021",
+   database: "moku"
  });
 
 var app = express();
