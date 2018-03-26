@@ -3,9 +3,6 @@ var express=require('express');
 var bodyParser=require('body-parser');
 var mysql=require('mysql');
 
-//Middleware
-app.use(bodyParser.json());
-
 //Objects
 var app=express();
 var conn=mysql.createConnection({
@@ -14,6 +11,9 @@ var conn=mysql.createConnection({
    password:"Node2021",
    database:"moku"
 });
+
+//Middleware
+app.use(bodyParser.json());
 
 //Methods
 app.get('/',function(req,res){
