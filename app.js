@@ -25,8 +25,16 @@ app.get('/',function(req,res){
    res.send("Hello World");
 });
 
-app.post('/',function(req,res){
-   res.json(req.body);
+app.post('/ALBUM',function(req,res){
+   var json=JSON
+   conn.connect(function(err){
+   if(err) throw err;
+      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+req.body.OFFSET+","+req.body.LIMIT;
+      conn.query(sql,function(err,result,fields){
+      if(err) throw err;
+         res.end(result);
+      });
+   });
 });
 
 //Port
