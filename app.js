@@ -32,10 +32,10 @@ app.post('/',function(req,res){
 });
 
 app.post('/ALBUM',function(req,res){
-   var json=JSON
+
    conn.connect(function(err){
    if(err) throw err;
-      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+req.body.OFFSET+","+req.body.LIMIT;
+      var sql="SELECT * FROM ALBUM_INDEX LIMIT 5,5";
       conn.query(sql,function(err,result,fields){
       if(err) throw err;
          res.end(result);
