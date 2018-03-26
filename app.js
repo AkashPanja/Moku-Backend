@@ -12,7 +12,11 @@ var conn=mysql.createConnection({
 app.get('/',function(req,res){
    conn.connect(function(err){
    if(err) throw err;
-      res.send("Connected");
+      var sql="CREATE TABLE ALBUM ( `ALBUM_ID` VARCHAR(30) NOT NULL , `ALBUM_NAME` VARCHAR(30) NOT NULL , `ALBUM_ARTIST` VARCHAR(30) NOT NULL , `ALBUM_ART` VARCHAR(30) NOT NULL )";
+      conn.query(sql,function(err,result){
+         if(err) throw err;
+         res.send("Table Created");
+      });
    });
 });
 
