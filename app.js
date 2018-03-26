@@ -32,15 +32,7 @@ app.post('/',function(req,res){
 });
 
 app.post('/ALBUM',function(req,res){
-   var jObj=JSON.parse(req.body);
-   conn.connect(function(err){
-   if(err) throw err;
-      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+jObj.OFFSET+","+jObj.LIMIT;
-      conn.query(sql,function(err,result,fields){
-      if(err) throw err;
-         res.json(result);
-      });
-   });
+ res.end(req.body.OFFSET);
 });
 
 //Port
