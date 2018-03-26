@@ -10,15 +10,9 @@ var con = mysql.createConnection({
 
 var app = express();
 
-app.use(bodyParser.json()); // add a middleware (so that express can parse request.body's json)
-
-app.get('/', function(req, res){
-   
 con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-});
-   
 });
 
 app.listen(3000);
