@@ -1,39 +1,17 @@
-var express = require('express');
-var mysql = require('mysql');
-var bodyParser = require('body-parser');
-var con = mysql.createConnection({
-   host: "localhost",
-   user: "blaze",
-   password: "Node2021",
-   database: "moku"
- });
+var express=require('express');
+var mysql=require('require');
 
-var app = express();
-
-const basicAuth = require('express-basic-auth');
- 
-app.use(basicAuth({
-    users: { 'blaze': 'Node2021' }
-}));
-
-app.use(bodyParser.json()); // add a middleware (so that express can parse request.body's json)
-
-app.get('/', function(req, res){
- res.send("Hello World!");
+var app=express();
+var conn=mysql.createConnection({
+   host:"localhost",
+   user:"blaze",
+   password:"Node2021",
+   database:"moku"
 });
 
-app.post('/', (request, response) => {
-
- con.connect(function(err) {
-   if (err) throw err;
-   var sql = "CREATE TABLE customers (name VARCHAR(255), address VARCHAR(255))"; 
-   con.query(sql, function (err, result) 
-       {if (err) throw err; console.log("Table created"); });
-   }
-  
-  });
- });
- 
+app.get('/',function(req,res){
+   conn.connect(function(err){
+   if(err) throw err;
+      res.send("Connected");
+   });
 });
-
-app.listen(3000);
