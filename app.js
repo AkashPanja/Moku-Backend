@@ -1,8 +1,20 @@
 //Require
 var express=require('express');
+var bodyParser=require('body-parser');
+var mysql=require('mysql');
+const basicAuth=require('express-basic-auth');
+
+//Middleware
+app.use(bodyParser.json());
 
 //Objects
 var app=express();
+var conn=mysql.createConnection({
+   host:'localhost',
+   user:'blaze',
+   password:'Node2021'
+   database:'moku'
+});
 
 //Methods
 app.get('/',function(req,res){
