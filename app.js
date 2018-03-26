@@ -32,8 +32,8 @@ app.get('/',function(req,res){
    });
 });
 
-app.post('/',function(req,res){
-   res.json(req.body);
+app.post('/', (request, response) => {
+  response.json(request.body);
 });
 
 //Port
