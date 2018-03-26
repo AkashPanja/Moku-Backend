@@ -13,7 +13,7 @@ var app = express();
 app.get('/',function(req,res){
   con.connect(function(err) {
   if (err) throw err;
-  res.send("Connected!");
+  res.end("Connected!");
    });
 });
 
