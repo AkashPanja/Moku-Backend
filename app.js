@@ -6,7 +6,7 @@ const basicAuth=require('express-basic-auth');
 
 //Middlewares
 app.use(basicAuth({
-   users:{'blaze':Node2021}
+   users:{'blaze':'Node2021'}
 }));
 
 app.use(bodyParser.json());
@@ -32,7 +32,7 @@ app.get('/',function(req,res){
    });
 });
 
-app.post('/'function(req,res){
+app.post('/',function(req,res){
    res.json(req.body);
 });
 
