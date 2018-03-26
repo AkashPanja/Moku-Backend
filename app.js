@@ -15,3 +15,5 @@ app.get('/',function(req,res){
       res.send("Connected");
    });
 });
+
+app.listen(3000);
