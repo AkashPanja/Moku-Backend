@@ -35,7 +35,7 @@ app.post('/ALBUM',function(req,res){
    
    conn.connect(function(err){
    if(err) throw err;
-      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+req.body.offset+","+req.body.offset;
+      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+req.body.offset+","+req.body.limit;
       conn.query(sql,function(err,result,fields){
       if(err) throw err;
          res.end(result);
