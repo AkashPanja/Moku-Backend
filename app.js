@@ -12,7 +12,7 @@ var app = express();
 
 con.connect(function(err) {
   if (err) throw err;
-  console.log("Connected!");
+  response.send"Connected!");
 });
 
 app.listen(3000);
