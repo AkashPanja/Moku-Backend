@@ -2,12 +2,7 @@
 var express=require('express');
 var mysql=require('mysql');
 var bodyParser=require('body-parser');
-const basicAuth=require('express-basic-auth');
 
-//Middlewares
-app.use(basicAuth({
-   users:{'blaze':'Node2021'}
-}));
 
 app.use(bodyParser.json());
 
