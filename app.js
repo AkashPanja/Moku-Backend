@@ -11,10 +11,7 @@ var con = mysql.createConnection({
 var app = express();
 
 app.get('/',function(req,res){
-  con.connect(function(err) {
-  if (err) throw err;
-  res.end("Connected!");
-   });
+  res.end("Hello World");
 });
 
 
