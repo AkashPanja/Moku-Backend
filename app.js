@@ -10,9 +10,12 @@ var con = mysql.createConnection({
 
 var app = express();
 
-con.connect(function(err) {
+app.get('/',function(){
+  con.connect(function(err) {
   if (err) throw err;
   response.send"Connected!");
+   });
 });
+
 
 app.listen(3000);
