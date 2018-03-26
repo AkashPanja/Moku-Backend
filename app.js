@@ -1,5 +1,5 @@
 var express=require('express');
-var mysql=require('require');
+var mysql=require('mysql');
 
 var app=express();
 var conn=mysql.createConnection({
