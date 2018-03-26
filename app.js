@@ -38,7 +38,7 @@ app.post('/ALBUM',function(req,res){
       var sql="SELECT * FROM ALBUM_INDEX LIMIT 1,2";
       conn.query(sql,function(err,result,fields){
       if(err) throw err;
-         res.end(result);
+         res.json(result);
       });
    });
 });
