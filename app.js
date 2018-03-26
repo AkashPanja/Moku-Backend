@@ -32,7 +32,15 @@ app.post('/',function(req,res){
 });
 
 app.post('/ALBUM',function(req,res){
- res.json(req.body.offset);
+   
+   conn.connect(function(err){
+   if(err) throw err;
+      var sql="SELECT * FROM ALBUM_INDEX LIMIT "+req.body.offset+","+req.body.offset;
+      conn.query(sql,function(err,result,fields){
+      if(err) throw err;
+         res.json(result);
+      });
+   });
 });
 
 //Port
