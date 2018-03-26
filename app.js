@@ -22,7 +22,7 @@ app.use(basicAuth({
 
 //Methods
 app.get('/',function(req,res){
-   res.send("Hello World");
+   res.end("Hello World");
 });
 
 
