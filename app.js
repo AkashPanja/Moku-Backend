@@ -16,9 +16,9 @@ var conn=mysql.createConnection({
 //Middleware
 app.use(bodyParser.json());
 
-app.use(basicAuth({
-        users:{"blaze":"Node2021"}
-}));
+//app.use(basicAuth({
+//        users:{"blaze":"Node2021"}
+//}));
 
 //Methods
 app.get('/',function(req,res){
