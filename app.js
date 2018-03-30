@@ -45,7 +45,7 @@ app.post('/ALBUM',function(req,res){
 
 
 
-app.post('/ALBUM_LIST',function(req,res){
+app.get('/ALBUM_LIST',function(req,res){
    
    conn.connect(function(err){
    if(err) throw err;
