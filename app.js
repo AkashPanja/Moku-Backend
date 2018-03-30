@@ -43,5 +43,19 @@ app.post('/ALBUM',function(req,res){
    });
 });
 
+
+
+app.post('/ALBUM_LIST',function(req,res){
+   
+   conn.connect(function(err){
+   if(err) throw err;
+      var sql="SELECT * FROM ALBUM_INDEX LIMIT 0,5;
+      conn.query(sql,function(err,result,fields){
+      if(err) throw err;
+         res.json(result);
+      });
+   });
+});
+
 //Port
 app.listen(3000);
